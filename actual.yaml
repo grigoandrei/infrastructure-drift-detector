@@ -1,0 +1,14 @@
+database:
+  engine: postgres
+  version: "15.2"
+  storage_gb: 50
+  multi_az: false
+  backup_retention_days: 7
+
+security_groups:
+  - name: web-sg
+    ingress:
+      - port: 443
+        cidr: "0.0.0.0/0"
+      - port: 22
+        cidr: "0.0.0.0/0"

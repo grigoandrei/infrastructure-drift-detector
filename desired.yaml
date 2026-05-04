@@ -1,0 +1,13 @@
+# Production database config
+database:
+  engine: postgres
+  version: "15.4"
+  storage_gb: 100
+  multi_az: true
+  backup_retention_days: 7
+
+security_groups:
+  - name: web-sg
+    ingress:
+      - port: 443
+        cidr: "0.0.0.0/0"
